@@ -15,6 +15,7 @@
         <module name="base-core" />
         <module name="integration-api" />
         <module name="base-swagger" />
+        <module name="biz-sync-service" />
         <module name="base-register-center" />
         <module name="integration-service" />
         <module name="integration-web" />
@@ -28,9 +29,6 @@
         <module name="biz-system-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="biz-sync-service" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
