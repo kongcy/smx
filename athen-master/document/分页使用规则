@@ -1,0 +1,3 @@
+(1) 不管是GET还是POST请求，分页参数必须放在请求URL上。eg:post-->http://172.16.12.122:7080/biz-monitor-web-srv/monitor/mediaSearch/findRecordList?limit=2&currentPage=1
+(2) 后台只需要添加@Page注解就能实现分页功能。使用注解@Page在方法上,表示该方法下所有的业务逻辑需要分页。@Page可以放在Controller，service,dao等不同包下,所使用的范围也不一样，通常一个service方法由不同的dao方法组合，可以将@page注解
+    注释到不同的dao方法中就能细化，dao方法每一个方法是否可以分页。

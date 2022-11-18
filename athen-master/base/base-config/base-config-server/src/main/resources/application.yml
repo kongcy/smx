@@ -1,0 +1,96 @@
+
+## org.springframework.boot.autoconfigure.web.ServerProperties
+server:
+  port: 9072
+  session-timeout: 2592000  # 单位: 秒. <= 30 * 24 * 60 * 60
+  servlet:
+    context-path: /config-server
+
+#spring name and  cloud config
+spring:
+    application:
+      name: config-server
+    profiles:
+      active: mybatis
+  #  security:
+  #    user:
+   #     name: admin
+   #     password: chenying521
+    freemarker:
+      request-context-attribute: rc
+      settings:
+        template_exception_handler: rethrow
+        template_update_delay: 0
+        classic_compatible: true
+        number_format: 0.######
+
+# 默认会去找 classpath 下的 logback.xml. 为了达到 profile 的目的故意不用这个文件名
+#logging.config: classpath:log-dev.xml
+
+
+          # 默认会去找 classpath 下的 logback.xml. 为了达到 profile 的目的故意不用这个文件名
+          #jdbc:postgresql://10.79.25.142:5433/xtplat
+          ##  url: jdbc:postgresql://11.55.10.170:5432/xtplat
+          ## jdbc:postgresql://11.55.10.172:5433/xtplat
+        ## jdbc:postgresql://30.55.10.222:5433/xtplat
+# 数据源配置
+
+    jmx:
+     enabled: false
+    output:
+    ansi:
+      enabled: always
+    datasource:
+      url: jdbc:postgresql://30.55.10.222:5433/xtplat
+      userName: postgres
+      password: postgresql
+      driver-class-name: org.postgresql.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+      #初始化大小
+        initialSize: 20
+      #最小值
+        minIdle: 5
+      #最大值
+        maxActive: 100
+      #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+        maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+        timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，
+      #'wall'用于防火墙，SpringBoot中没有log4j，我改成了log4j2
+        filters: stat,wall,log4j2
+      #最大PSCache连接
+        maxPoolPreparedStatementPerConnectionSize: 20
+        useGlobalDataSourceStat: true
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+logging:
+  config: classpath:log4j2.xml
+  path: /var/www/dispatcher3/sh/logs/
+  file: base-config-service.log
+  max-size: 1024M
+  max-history: 15
+  level:
+    root: DEBUG
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone:  http://localhost:9071/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+
+
+

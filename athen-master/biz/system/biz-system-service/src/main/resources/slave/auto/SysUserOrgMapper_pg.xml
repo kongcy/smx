@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysUserOrgMapper">
+    <delete id="deleteByUserIdAndOrgId">
+        delete
+        from sys_user_org
+        where "USER_ID" = #{userId,jdbcType=VARCHAR}
+          AND "ORG_ID" = #{orgId,jdbcType=VARCHAR}
+    </delete>
+</mapper>

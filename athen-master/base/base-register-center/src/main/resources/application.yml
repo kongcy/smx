@@ -1,0 +1,26 @@
+server:  # 服务端口
+  port: 9999
+spring:
+  application:  # 应用名字，eureka 会根据它作为服务id
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone:  http://localhost:9999/eureka
+    register-with-eureka: false  # 不向eureka server 注册自己
+    fetch-registry: false  # 不向eureka server 获取服务列表
+  server:
+      eviction-interval-timer-in-ms: 4000
+      enable-self-preservation: false
+      renewal-percent-threshold: 0.9
+logging:
+   config: classpath:log4j2.xml
+   path: /Users/chenying/sh/logs/
+   file: base-register-service.log
+   max-size: 1024M
+   max-history: 15
+   level:
+      root: INFO
+

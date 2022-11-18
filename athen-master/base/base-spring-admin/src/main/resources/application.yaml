@@ -1,0 +1,38 @@
+server: # 服务端口
+  port: 10000
+spring:
+  application: # 应用名字，eureka 会根据它作为服务id
+    name: spring-admin-service
+  security:
+    user:
+      name: admin
+      password: chenying521
+
+#暴露监控端点
+
+logging:
+  config: classpath:log4j2.xml
+  max-size: 1024M
+  max-history: 15
+  level:
+    root: info
+  file:
+    name: base-spring-admin
+
+# eureka 配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone:  http://localhost:9999/eureka
+    register-with-eureka: true
+    fetch-registry: true
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

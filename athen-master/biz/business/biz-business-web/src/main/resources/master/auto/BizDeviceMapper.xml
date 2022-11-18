@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceMapper">
+  <resultMap id="BaseResultMap" type="com.athen.business.api.model.BizDevice">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DEVICE_CODE" jdbcType="VARCHAR" property="deviceCode" />
+    <result column="WLH" jdbcType="VARCHAR" property="wlh" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="CHECK_TIME" jdbcType="INTEGER" property="checkTime" />
+    <result column="SEQ" jdbcType="VARCHAR" property="seq" />
+    <result column="CK_NO" jdbcType="VARCHAR" property="ckNo" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="TOTAL" jdbcType="INTEGER" property="total" />
+    <result column="USER_COUNT" jdbcType="INTEGER" property="userCount" />
+    <result column="LEND_COUNT" jdbcType="INTEGER" property="lendCount" />
+    <result column="DISABLE_COUNT" jdbcType="INTEGER" property="disableCount" />
+    <result column="LIMIT_COUNT" jdbcType="INTEGER" property="limitCount" />
+    <result column="ZHCS" jdbcType="VARCHAR" property="zhcs" />
+    <result column="ZNG" jdbcType="VARCHAR" property="zng" />
+    <result column="RFID" jdbcType="VARCHAR" property="rfid" />
+    <result column="CHECK_BEGIN_TIME" jdbcType="TIMESTAMP" property="checkBeginTime" />
+    <result column="CHECK_END_TIME" jdbcType="TIMESTAMP" property="checkEndTime" />
+  </resultMap>
+
+  <resultMap id="BaseResultMap_as" type="com.athen.business.api.model.BizDevice">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DEVICE_CODE" jdbcType="VARCHAR" property="deviceCode" />
+    <result column="WLH" jdbcType="VARCHAR" property="wlh" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="CHECK_TIME" jdbcType="INTEGER" property="checkTime" />
+    <result column="SEQ" jdbcType="VARCHAR" property="seq" />
+    <result column="CK_NO" jdbcType="VARCHAR" property="ckNo" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="TOTAL" jdbcType="INTEGER" property="total" />
+    <result column="USER_COUNT" jdbcType="INTEGER" property="userCount" />
+    <result column="LEND_COUNT" jdbcType="INTEGER" property="lendCount" />
+    <result column="DISABLE_COUNT" jdbcType="INTEGER" property="disableCount" />
+    <result column="LIMIT_COUNT" jdbcType="INTEGER" property="limitCount" />
+    <result column="ZHCS" jdbcType="VARCHAR" property="zhcs" />
+    <result column="ZNG" jdbcType="VARCHAR" property="zng" />
+    <result column="RFID" jdbcType="VARCHAR" property="rfid" />
+    <result column="CHECK_BEGIN_TIME" jdbcType="TIMESTAMP" property="checkBeginTime" />
+    <result column="CHECK_END_TIME" jdbcType="TIMESTAMP" property="checkEndTime" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, DEVICE_CODE, WLH, DEVICE_NAME, TYPE, CHECK_TIME, SEQ, CK_NO, DEVICE_TYPE, CREATE_TIME, 
+    CREATE_USER, UPDATE_TIME, UPDATE_USER, TOTAL, USER_COUNT, LEND_COUNT, DISABLE_COUNT, 
+    LIMIT_COUNT, ZHCS, ZNG, RFID, CHECK_BEGIN_TIME, CHECK_END_TIME
+  </sql>
+  <select id="selectByExample" parameterType="com.athen.business.api.model.BizDeviceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from biz_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from biz_device
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from biz_device
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.athen.business.api.model.BizDeviceExample">
+    delete from biz_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.athen.business.api.model.BizDevice">
+    insert into biz_device (ID, DEVICE_CODE, WLH, 
+      DEVICE_NAME, TYPE, CHECK_TIME, 
+      SEQ, CK_NO, DEVICE_TYPE, 
+      CREATE_TIME, CREATE_USER, UPDATE_TIME, 
+      UPDATE_USER, TOTAL, USER_COUNT, 
+      LEND_COUNT, DISABLE_COUNT, LIMIT_COUNT, 
+      ZHCS, ZNG, RFID, CHECK_BEGIN_TIME, 
+      CHECK_END_TIME)
+    values (#{id,jdbcType=VARCHAR}, #{deviceCode,jdbcType=VARCHAR}, #{wlh,jdbcType=VARCHAR}, 
+      #{deviceName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{checkTime,jdbcType=INTEGER}, 
+      #{seq,jdbcType=VARCHAR}, #{ckNo,jdbcType=VARCHAR}, #{deviceType,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=VARCHAR}, #{total,jdbcType=INTEGER}, #{userCount,jdbcType=INTEGER}, 
+      #{lendCount,jdbcType=INTEGER}, #{disableCount,jdbcType=INTEGER}, #{limitCount,jdbcType=INTEGER}, 
+      #{zhcs,jdbcType=VARCHAR}, #{zng,jdbcType=VARCHAR}, #{rfid,jdbcType=VARCHAR}, #{checkBeginTime,jdbcType=TIMESTAMP}, 
+      #{checkEndTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.athen.business.api.model.BizDevice">
+    insert into biz_device
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="deviceCode != null">
+        DEVICE_CODE,
+      </if>
+      <if test="wlh != null">
+        WLH,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="type != null">
+        TYPE,
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME,
+      </if>
+      <if test="seq != null">
+        SEQ,
+      </if>
+      <if test="ckNo != null">
+        CK_NO,
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="total != null">
+        TOTAL,
+      </if>
+      <if test="userCount != null">
+        USER_COUNT,
+      </if>
+      <if test="lendCount != null">
+        LEND_COUNT,
+      </if>
+      <if test="disableCount != null">
+        DISABLE_COUNT,
+      </if>
+      <if test="limitCount != null">
+        LIMIT_COUNT,
+      </if>
+      <if test="zhcs != null">
+        ZHCS,
+      </if>
+      <if test="zng != null">
+        ZNG,
+      </if>
+      <if test="rfid != null">
+        RFID,
+      </if>
+      <if test="checkBeginTime != null">
+        CHECK_BEGIN_TIME,
+      </if>
+      <if test="checkEndTime != null">
+        CHECK_END_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceCode != null">
+        #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wlh != null">
+        #{wlh,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        #{checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="seq != null">
+        #{seq,jdbcType=VARCHAR},
+      </if>
+      <if test="ckNo != null">
+        #{ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="total != null">
+        #{total,jdbcType=INTEGER},
+      </if>
+      <if test="userCount != null">
+        #{userCount,jdbcType=INTEGER},
+      </if>
+      <if test="lendCount != null">
+        #{lendCount,jdbcType=INTEGER},
+      </if>
+      <if test="disableCount != null">
+        #{disableCount,jdbcType=INTEGER},
+      </if>
+      <if test="limitCount != null">
+        #{limitCount,jdbcType=INTEGER},
+      </if>
+      <if test="zhcs != null">
+        #{zhcs,jdbcType=VARCHAR},
+      </if>
+      <if test="zng != null">
+        #{zng,jdbcType=VARCHAR},
+      </if>
+      <if test="rfid != null">
+        #{rfid,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBeginTime != null">
+        #{checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkEndTime != null">
+        #{checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.athen.business.api.model.BizDeviceExample" resultType="java.lang.Long">
+    select count(*) from biz_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update biz_device
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceCode != null">
+        DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wlh != null">
+        WLH = #{record.wlh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceName != null">
+        DEVICE_NAME = #{record.deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        TYPE = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkTime != null">
+        CHECK_TIME = #{record.checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.seq != null">
+        SEQ = #{record.seq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ckNo != null">
+        CK_NO = #{record.ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceType != null">
+        DEVICE_TYPE = #{record.deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.total != null">
+        TOTAL = #{record.total,jdbcType=INTEGER},
+      </if>
+      <if test="record.userCount != null">
+        USER_COUNT = #{record.userCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.lendCount != null">
+        LEND_COUNT = #{record.lendCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.disableCount != null">
+        DISABLE_COUNT = #{record.disableCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.limitCount != null">
+        LIMIT_COUNT = #{record.limitCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.zhcs != null">
+        ZHCS = #{record.zhcs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zng != null">
+        ZNG = #{record.zng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rfid != null">
+        RFID = #{record.rfid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkBeginTime != null">
+        CHECK_BEGIN_TIME = #{record.checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.checkEndTime != null">
+        CHECK_END_TIME = #{record.checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update biz_device
+    set ID = #{record.id,jdbcType=VARCHAR},
+      DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      WLH = #{record.wlh,jdbcType=VARCHAR},
+      DEVICE_NAME = #{record.deviceName,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      CHECK_TIME = #{record.checkTime,jdbcType=INTEGER},
+      SEQ = #{record.seq,jdbcType=VARCHAR},
+      CK_NO = #{record.ckNo,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{record.deviceType,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      TOTAL = #{record.total,jdbcType=INTEGER},
+      USER_COUNT = #{record.userCount,jdbcType=INTEGER},
+      LEND_COUNT = #{record.lendCount,jdbcType=INTEGER},
+      DISABLE_COUNT = #{record.disableCount,jdbcType=INTEGER},
+      LIMIT_COUNT = #{record.limitCount,jdbcType=INTEGER},
+      ZHCS = #{record.zhcs,jdbcType=VARCHAR},
+      ZNG = #{record.zng,jdbcType=VARCHAR},
+      RFID = #{record.rfid,jdbcType=VARCHAR},
+      CHECK_BEGIN_TIME = #{record.checkBeginTime,jdbcType=TIMESTAMP},
+      CHECK_END_TIME = #{record.checkEndTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.athen.business.api.model.BizDevice">
+    update biz_device
+    <set>
+      <if test="deviceCode != null">
+        DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wlh != null">
+        WLH = #{wlh,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME = #{checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="seq != null">
+        SEQ = #{seq,jdbcType=VARCHAR},
+      </if>
+      <if test="ckNo != null">
+        CK_NO = #{ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="total != null">
+        TOTAL = #{total,jdbcType=INTEGER},
+      </if>
+      <if test="userCount != null">
+        USER_COUNT = #{userCount,jdbcType=INTEGER},
+      </if>
+      <if test="lendCount != null">
+        LEND_COUNT = #{lendCount,jdbcType=INTEGER},
+      </if>
+      <if test="disableCount != null">
+        DISABLE_COUNT = #{disableCount,jdbcType=INTEGER},
+      </if>
+      <if test="limitCount != null">
+        LIMIT_COUNT = #{limitCount,jdbcType=INTEGER},
+      </if>
+      <if test="zhcs != null">
+        ZHCS = #{zhcs,jdbcType=VARCHAR},
+      </if>
+      <if test="zng != null">
+        ZNG = #{zng,jdbcType=VARCHAR},
+      </if>
+      <if test="rfid != null">
+        RFID = #{rfid,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBeginTime != null">
+        CHECK_BEGIN_TIME = #{checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkEndTime != null">
+        CHECK_END_TIME = #{checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.athen.business.api.model.BizDevice">
+    update biz_device
+    set DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      WLH = #{wlh,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=VARCHAR},
+      CHECK_TIME = #{checkTime,jdbcType=INTEGER},
+      SEQ = #{seq,jdbcType=VARCHAR},
+      CK_NO = #{ckNo,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      TOTAL = #{total,jdbcType=INTEGER},
+      USER_COUNT = #{userCount,jdbcType=INTEGER},
+      LEND_COUNT = #{lendCount,jdbcType=INTEGER},
+      DISABLE_COUNT = #{disableCount,jdbcType=INTEGER},
+      LIMIT_COUNT = #{limitCount,jdbcType=INTEGER},
+      ZHCS = #{zhcs,jdbcType=VARCHAR},
+      ZNG = #{zng,jdbcType=VARCHAR},
+      RFID = #{rfid,jdbcType=VARCHAR},
+      CHECK_BEGIN_TIME = #{checkBeginTime,jdbcType=TIMESTAMP},
+      CHECK_END_TIME = #{checkEndTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

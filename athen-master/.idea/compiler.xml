@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="biz-syncdata-service" />
+        <module name="base-config-client" />
+        <module name="biz-business-api" />
+        <module name="biz-business-web" />
+        <module name="base-dataSource" />
+        <module name="base-core" />
+        <module name="integration-api" />
+        <module name="base-swagger" />
+        <module name="base-register-center" />
+        <module name="integration-service" />
+        <module name="integration-web" />
+        <module name="base-spring-gateway" />
+        <module name="biz-system-web" />
+        <module name="base-spring-admin" />
+        <module name="base-nacos" />
+        <module name="biz-system-api" />
+        <module name="base-redis" />
+        <module name="base-config-server" />
+        <module name="biz-system-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="biz-sync-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base-config-client" options="-parameters" />
+      <module name="base-config-server" options="-parameters" />
+      <module name="base-core" options="-parameters" />
+      <module name="base-dataSource" options="-parameters" />
+      <module name="base-nacos" options="-parameters" />
+      <module name="base-redis" options="-parameters" />
+      <module name="base-register-center" options="-parameters" />
+      <module name="base-spring-admin" options="-parameters" />
+      <module name="base-spring-gateway" options="-parameters" />
+      <module name="base-swagger" options="-parameters" />
+      <module name="biz-business-api" options="-parameters" />
+      <module name="biz-business-web" options="-parameters" />
+      <module name="biz-sync-service" options="-parameters" />
+      <module name="biz-syncdata-service" options="-parameters" />
+      <module name="biz-system-api" options="-parameters" />
+      <module name="biz-system-service" options="-parameters" />
+      <module name="biz-system-web" options="-parameters" />
+      <module name="sync" options="" />
+    </option>
+  </component>
+</project>

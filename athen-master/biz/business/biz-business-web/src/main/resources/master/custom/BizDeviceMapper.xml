@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceMapper">
+  <select id="findDeviceByrfId"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
+    SELECT
+      d.ID,
+      d.TYPE,
+      d.DEVICE_NAME,
+      d.DEVICE_CODE,
+      d.CK_NO,
+      d.WLH,
+      d.DEVICE_TYPE,
+      d.TYPE,
+      s.CF,
+      s.CS,
+      s.FJ,
+      s.HJ,
+      s.XH,
+      s.RFID,
+      d.CHECK_TIME
+    FROM
+      BIZ_DEVICE d
+        LEFT JOIN BIZ_DEVICE_STORE s ON d.DEVICE_CODE = s.DEVICE_CODE
+    WHERE
+      s.RFID = #{rfid,jdbcType=VARCHAR}
+  </select>
+
+  <select id="findDeviceByCondition" parameterType="java.lang.String"  resultMap="BaseResultMap_as">
+    SELECT
+      d.ID,
+      d.CK_NO,
+      d.DEVICE_CODE,
+      d.DEVICE_NAME,
+      d.DEVICE_TYPE,
+      d.TYPE,
+      d.CHECK_TIME,
+      d.SEQ,
+      d.WLH,
+      d.ZNG,
+      d.ZHCS
+    FROM
+      BIZ_DEVICE d
+    WHERE
+      d.DEVICE_CODE LIKE CONCAT( '%', #{condition,jdbcType=VARCHAR}, '%' )
+       OR d.DEVICE_NAME LIKE CONCAT( '%', #{condition,jdbcType=VARCHAR}, '%' )
+       OR d.WLH LIKE CONCAT( '%', #{condition,jdbcType=VARCHAR}, '%' )
+    ORDER BY CREATE_TIME
+  </select>
+
+  <select id="findDeviceStore"  parameterType="java.lang.String" resultMap="BaseResultMap_as">
+    SELECT
+      s.RFID,
+      s.DEVICE_CODE,
+      s.CHECK_END_TIME,
+      s.CF,
+      s.CS,
+      s.FJ,
+      s.HJ,
+      s.XH,
+      d.DEVICE_NAME,
+      d.DEVICE_TYPE,
+      d.WLH,
+      r.LEND_USER,
+      (SELECT u.USER_NAME FROM SYS_USER u WHERE u.ID= r.LEND_USER) AS USER_NAME,
+      r.BEGIN_TIME AS CREATE_TIME
+    FROM
+      BIZ_DEVICE_STORE s
+        LEFT JOIN biz_device d ON s.DEVICE_CODE = d.DEVICE_CODE
+        LEFT JOIN BIZ_DEVICE_LEND_RECORD r ON r.DEVICE_CODE = s.DEVICE_CODE
+    WHERE 1=1
+    <if test="condition != null">
+      AND
+      s.DEVICE_CODE LIKE CONCAT( '%', #{condition,jdbcType=VARCHAR}, '%' )
+      OR s.RFID LIKE CONCAT( '%', #{condition,jdbcType=VARCHAR}, '%' )
+    </if>
+    ORDER BY CREATE_TIME
+  </select>
+
+  <select id="findDeviceByCode" parameterType="java.lang.String"  resultMap="BaseResultMap">
+    SELECT
+     d.*
+    FROM
+      BIZ_DEVICE d
+    WHERE
+      d.DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="findCheckDevice" parameterType="java.lang.String"  resultMap="BaseResultMap_as">
+    SELECT
+      s.RFID,
+      s.DEVICE_CODE,
+      s.CHECK_END_TIME,
+      s.CF,
+      s.CS,
+      s.FJ,
+      s.HJ,
+      s.XH,
+      d.DEVICE_NAME,
+      d.DEVICE_TYPE,
+      d.WLH,
+      r.LEND_USER,
+      (SELECT u.USER_NAME FROM SYS_USER u WHERE u.ID= r.LEND_USER) AS USER_NAME,
+      r.BEGIN_TIME AS CREATE_TIME
+    FROM
+      BIZ_DEVICE_STORE s
+        LEFT JOIN biz_device d ON s.DEVICE_CODE = d.DEVICE_CODE
+        LEFT JOIN BIZ_DEVICE_LEND_RECORD r ON r.DEVICE_CODE = s.DEVICE_CODE
+    WHERE
+        now()>= (
+        SELECT
+          date_add( s.CHECK_END_TIME, INTERVAL - 30 DAY ))
+    ORDER BY CREATE_TIME
+  </select>
+
+</mapper>

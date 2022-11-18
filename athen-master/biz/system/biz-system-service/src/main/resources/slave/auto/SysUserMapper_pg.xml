@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysUserMapper">
+    <select id="findUserInIds" resultMap="BaseResultMap">
+        SELECT U."ID", U."USER_NAME",U."LOGIN_NAME" FROM sys_user U WHERE "STATE"='1'
+        <if test="userIds!=null and userIds.size() > 0">
+            AND "ID" IN
+            <foreach
+                    collection="userIds" index="index" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="findUserByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT U."ID"
+        FROM sys_user U
+        where U."LOGIN_NAME" = #{loginName,jdbcType=VARCHAR}
+    </select>
+
+    <select id="findUserByOrgId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+            u.*,
+            R."ID" ROLE_ID,
+            r."NAME"
+        FROM
+            sys_user u,
+            sys_user_role ru,
+            sys_role r
+        WHERE
+            u."ID" = RU."USER_ID"
+            AND RU."ROLE_ID" = R."ID"
+            AND u."ID" IN (SELECT "USER_ID" FROM sys_user_org uo WHERE uo."ORG_ID" = #{orgId,jdbcType=VARCHAR})
+    </select>
+
+</mapper>

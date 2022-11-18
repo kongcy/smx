@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceLendRecordMapper">
+    <select id="findLendRecordByDeviceCodeAndUser" parameterType="java.lang.String"  resultMap="BaseResultMap">
+      SELECT
+        l.ID
+      FROM
+        BIZ_DEVICE_LEND_RECORD l
+      WHERE
+        l.LEND_DEPART = #{deviceCode,jdbcType=VARCHAR}
+        AND l.LEND_USER = #{userId,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteLendRecordByRfidAndUserId" parameterType="java.lang.String">
+        DELETE
+        FROM
+            BIZ_DEVICE_LEND_RECORD
+        WHERE
+            LEND_DEPART = #{rfid,jdbcType=VARCHAR}
+          AND
+            LEND_USER = #{userId,jdbcType=VARCHAR}
+    </delete>
+
+    <select id="findPageLendRecord" resultMap="BaseResultMap">
+        SELECT
+        r.ID,
+        r.DEVICE_CODE,
+        r.BEGIN_TIME,
+        r.LEND_USER,
+        r.LEND_DEPART,
+        u.USER_NAME AS CREATE_USER,
+        d.CHECK_BEGIN_TIME,
+        d.TYPE,
+        d.DEVICE_NAME,
+        d.DEVICE_TYPE,
+        s.CF,
+        s.CS,
+        s.FJ,
+        s.HJ,
+        s.XH,
+        s.CK_NO,
+        s.RFID
+        FROM
+        BIZ_DEVICE_LEND_RECORD r
+        LEFT JOIN biz_device d ON r.DEVICE_CODE = d.DEVICE_CODE
+        LEFT JOIN BIZ_DEVICE_STORE s ON r.LEND_DEPART = s.RFID
+        LEFT JOIN SYS_USER u ON u.ID = r.LEND_USER
+        WHERE 1 =1
+        <if test="lendUser != null">
+            AND r.LEND_USER = #{lendUser,jdbcType=VARCHAR}
+        </if>
+        <if test="deviceCode != null">
+            AND r.DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR}
+        </if>
+        <if test="lendDepart != null">
+            AND r.LEND_DEPART = #{lendDepart,jdbcType=VARCHAR}
+        </if>
+        <if test="deviceName != null">
+            AND r.DEVICE_NAME LIKE CONCAT( '%', #{deviceName,jdbcType=VARCHAR}, '%' )
+        </if>
+        ORDER BY r.BEGIN_TIME
+    </select>
+</mapper>

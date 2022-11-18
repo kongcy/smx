@@ -1,0 +1,128 @@
+
+## org.springframework.boot.autoconfigure.web.ServerProperties
+server:
+  port: 7070
+  session-timeout: 2592000  # 单位: 秒. <= 30 * 24 * 60 * 60
+
+
+online: false
+# 数据源配置
+spring:
+  application:
+    name: biz-system-service
+  profiles:
+    active: dev
+  #springbootAdmin
+  boot:
+    admin:
+      client:
+        url: http://localhost:10000
+        username: admin
+        password: chenying521
+  ### redis注册信息
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password:
+    jedis:
+      pool:
+        max-active: 300
+  jmx:
+    enabled: false
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    group:
+      master:
+        url: jdbc:mysql://127.0.0.1:3306/smx?useUnicode=true&characterEncoding=utf8
+        userName: root
+        password: 123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+      slave:
+        url: jdbc:mysql://127.0.0.1:3306/smx
+        userName: root
+        password: 123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        #初始化大？小
+        initialSize: 20
+        #最小值
+        minIdle: 5
+        #最大值
+        maxActive: 500
+        #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+        maxWait: 60000
+        #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+        timeBetweenEvictionRunsMillis: 60000
+        #配置一个连接在池中最小生存的时间
+     #   minEvictableIdleTimeMillis: 310000
+     #   maxEvictableIdleTimeMillis: 400000
+        validationQuery: SELECT 1
+        #监测连接是否有效的SQL
+        validationQueryTimeout: 10
+        testWhileIdle: true
+        #监测连接是否有效
+        testOnBorrow: false
+        testOnReturn: false
+        #是否缓存PreparedStatements,即PSCache对支持游标的数据库性能提升巨大，如oracle,mysql下建议关闭
+        poolPreparedStatements: true
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，
+        #'wall'用于防火墙，SpringBoot中没有log4j，我改成了log4j2
+        filters: stat
+        #最大PSCache连接
+        maxPoolPreparedStatementPerConnectionSize: 20
+        useGlobalDataSourceStat: true
+        # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  main:
+    allow-bean-definition-overriding: true
+handler:
+  packagesName: com.xtxk.system.api.handler
+
+#分页
+pagehelper:
+  helperDialect: postgresql
+  resonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+#日志
+logging:
+  config: classpath:log4j2.xml
+  file:
+    name: biz-system-service
+  max-size: 1024M
+  max-history: 15
+  level:
+    root: info
+
+# eureka 配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone:  http://localhost:9999/eureka
+    register-with-eureka: true
+    fetch-registry: true
+#springbootAdmin
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#人脸识别sdk
+config:
+  arcface-sdk:
+    sdk-lib-path:
+    app-id: N8vGDGUEVARMtubF83EsKEhV8mNnysj1qAzDZk4L6Z9
+    sdk-key: 9qnXBUFDHZPHXZLfB6stp5jjguQg4kVZsvbQejkPq9e1
+    thread-pool-size: 5

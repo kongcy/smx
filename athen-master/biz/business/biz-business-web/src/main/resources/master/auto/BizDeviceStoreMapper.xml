@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceStoreMapper">
+  <resultMap id="BaseResultMap" type="com.athen.business.api.model.BizDeviceStore">
+    <id column="RFID" jdbcType="VARCHAR" property="rfid" />
+    <result column="DEVICE_CODE" jdbcType="VARCHAR" property="deviceCode" />
+    <result column="CF" jdbcType="VARCHAR" property="cf" />
+    <result column="FJ" jdbcType="VARCHAR" property="fj" />
+    <result column="HJ" jdbcType="VARCHAR" property="hj" />
+    <result column="XH" jdbcType="VARCHAR" property="xh" />
+    <result column="CS" jdbcType="VARCHAR" property="cs" />
+    <result column="CK_NO" jdbcType="VARCHAR" property="ckNo" />
+    <result column="CHECK_BEGIN_TIME" jdbcType="TIMESTAMP" property="checkBeginTime" />
+    <result column="CHECK_END_TIME" jdbcType="TIMESTAMP" property="checkEndTime" />
+    <result column="CHECK_TIME" jdbcType="INTEGER" property="checkTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    RFID, DEVICE_CODE, CF, FJ, HJ, XH, CS, CK_NO, CHECK_BEGIN_TIME, CHECK_END_TIME, CHECK_TIME
+  </sql>
+  <select id="selectByExample" parameterType="com.athen.business.api.model.BizDeviceStoreExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from BIZ_DEVICE_STORE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BIZ_DEVICE_STORE
+    where RFID = #{rfid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from BIZ_DEVICE_STORE
+    where RFID = #{rfid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.athen.business.api.model.BizDeviceStoreExample">
+    delete from BIZ_DEVICE_STORE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.athen.business.api.model.BizDeviceStore">
+    insert into BIZ_DEVICE_STORE (RFID, DEVICE_CODE, CF, 
+      FJ, HJ, XH, CS, 
+      CK_NO, CHECK_BEGIN_TIME, CHECK_END_TIME, 
+      CHECK_TIME)
+    values (#{rfid,jdbcType=VARCHAR}, #{deviceCode,jdbcType=VARCHAR}, #{cf,jdbcType=VARCHAR}, 
+      #{fj,jdbcType=VARCHAR}, #{hj,jdbcType=VARCHAR}, #{xh,jdbcType=VARCHAR}, #{cs,jdbcType=VARCHAR}, 
+      #{ckNo,jdbcType=VARCHAR}, #{checkBeginTime,jdbcType=TIMESTAMP}, #{checkEndTime,jdbcType=TIMESTAMP}, 
+      #{checkTime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.athen.business.api.model.BizDeviceStore">
+    insert into BIZ_DEVICE_STORE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rfid != null">
+        RFID,
+      </if>
+      <if test="deviceCode != null">
+        DEVICE_CODE,
+      </if>
+      <if test="cf != null">
+        CF,
+      </if>
+      <if test="fj != null">
+        FJ,
+      </if>
+      <if test="hj != null">
+        HJ,
+      </if>
+      <if test="xh != null">
+        XH,
+      </if>
+      <if test="cs != null">
+        CS,
+      </if>
+      <if test="ckNo != null">
+        CK_NO,
+      </if>
+      <if test="checkBeginTime != null">
+        CHECK_BEGIN_TIME,
+      </if>
+      <if test="checkEndTime != null">
+        CHECK_END_TIME,
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rfid != null">
+        #{rfid,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceCode != null">
+        #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cf != null">
+        #{cf,jdbcType=VARCHAR},
+      </if>
+      <if test="fj != null">
+        #{fj,jdbcType=VARCHAR},
+      </if>
+      <if test="hj != null">
+        #{hj,jdbcType=VARCHAR},
+      </if>
+      <if test="xh != null">
+        #{xh,jdbcType=VARCHAR},
+      </if>
+      <if test="cs != null">
+        #{cs,jdbcType=VARCHAR},
+      </if>
+      <if test="ckNo != null">
+        #{ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBeginTime != null">
+        #{checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkEndTime != null">
+        #{checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkTime != null">
+        #{checkTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.athen.business.api.model.BizDeviceStoreExample" resultType="java.lang.Long">
+    select count(*) from BIZ_DEVICE_STORE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update BIZ_DEVICE_STORE
+    <set>
+      <if test="record.rfid != null">
+        RFID = #{record.rfid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceCode != null">
+        DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cf != null">
+        CF = #{record.cf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fj != null">
+        FJ = #{record.fj,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hj != null">
+        HJ = #{record.hj,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xh != null">
+        XH = #{record.xh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cs != null">
+        CS = #{record.cs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ckNo != null">
+        CK_NO = #{record.ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkBeginTime != null">
+        CHECK_BEGIN_TIME = #{record.checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.checkEndTime != null">
+        CHECK_END_TIME = #{record.checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.checkTime != null">
+        CHECK_TIME = #{record.checkTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update BIZ_DEVICE_STORE
+    set RFID = #{record.rfid,jdbcType=VARCHAR},
+      DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      CF = #{record.cf,jdbcType=VARCHAR},
+      FJ = #{record.fj,jdbcType=VARCHAR},
+      HJ = #{record.hj,jdbcType=VARCHAR},
+      XH = #{record.xh,jdbcType=VARCHAR},
+      CS = #{record.cs,jdbcType=VARCHAR},
+      CK_NO = #{record.ckNo,jdbcType=VARCHAR},
+      CHECK_BEGIN_TIME = #{record.checkBeginTime,jdbcType=TIMESTAMP},
+      CHECK_END_TIME = #{record.checkEndTime,jdbcType=TIMESTAMP},
+      CHECK_TIME = #{record.checkTime,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.athen.business.api.model.BizDeviceStore">
+    update BIZ_DEVICE_STORE
+    <set>
+      <if test="deviceCode != null">
+        DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cf != null">
+        CF = #{cf,jdbcType=VARCHAR},
+      </if>
+      <if test="fj != null">
+        FJ = #{fj,jdbcType=VARCHAR},
+      </if>
+      <if test="hj != null">
+        HJ = #{hj,jdbcType=VARCHAR},
+      </if>
+      <if test="xh != null">
+        XH = #{xh,jdbcType=VARCHAR},
+      </if>
+      <if test="cs != null">
+        CS = #{cs,jdbcType=VARCHAR},
+      </if>
+      <if test="ckNo != null">
+        CK_NO = #{ckNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBeginTime != null">
+        CHECK_BEGIN_TIME = #{checkBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkEndTime != null">
+        CHECK_END_TIME = #{checkEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME = #{checkTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where RFID = #{rfid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.athen.business.api.model.BizDeviceStore">
+    update BIZ_DEVICE_STORE
+    set DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      CF = #{cf,jdbcType=VARCHAR},
+      FJ = #{fj,jdbcType=VARCHAR},
+      HJ = #{hj,jdbcType=VARCHAR},
+      XH = #{xh,jdbcType=VARCHAR},
+      CS = #{cs,jdbcType=VARCHAR},
+      CK_NO = #{ckNo,jdbcType=VARCHAR},
+      CHECK_BEGIN_TIME = #{checkBeginTime,jdbcType=TIMESTAMP},
+      CHECK_END_TIME = #{checkEndTime,jdbcType=TIMESTAMP},
+      CHECK_TIME = #{checkTime,jdbcType=INTEGER}
+    where RFID = #{rfid,jdbcType=VARCHAR}
+  </update>
+</mapper>

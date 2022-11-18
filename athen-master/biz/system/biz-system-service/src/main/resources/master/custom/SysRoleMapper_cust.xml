@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysRoleMapper">
+
+    <select id="findUserIdsByRoleId" resultType="java.lang.String">
+        SELECT USER_ID
+        FROM sys_user_role
+        WHERE ROLE_ID = #{roleId}
+    </select>
+
+    <select id="findRoleIn" resultMap="BaseResultMap_Alias">
+        SELECT
+        r.id,
+        r.NAME,
+        r.CODE
+        FROM
+        sys_role r
+        WHERE 1=1
+        <if test="ids!=null and ids.size() > 0">
+            AND ID IN
+            <foreach
+                    collection="ids" index="index" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="findRoleByUserId" resultMap="BaseResultMap_Alias">
+        SELECT
+            r.id,
+            r.NAME,
+            r.CODE
+        FROM
+            sys_role r
+        WHERE
+            r.ID IN ( SELECT ur.ROLE_ID FROM sys_user_role ur WHERE ur.USER_ID = #{userId,jdbcType=VARCHAR} );
+    </select>
+
+</mapper>

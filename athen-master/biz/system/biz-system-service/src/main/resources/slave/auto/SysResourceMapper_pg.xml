@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysResourceMapper">
+    <select id="findResByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT r."ID"
+        FROM sys_resource r
+        WHERE r."NAME" = #{name,jdbcType=VARCHAR};
+    </select>
+
+    <select id="findResByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT r."ID"
+        FROM sys_resource r
+        WHERE r."CODE" = #{code,jdbcType=VARCHAR};
+    </select>
+
+    <select id="findResBySupId" parameterType="java.lang.String" resultMap="BaseResultMap_dto">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."PATH",
+               r."DEPTH",
+               r."URL",
+               r."SEQ",
+               r."TYPE",
+               r."WEB_PATH",
+               r."ICON"
+        FROM sys_resource r
+        WHERE r."SUP_ID" = #{supId,jdbcType=VARCHAR}
+        ORDER BY "SEQ";
+    </select>
+
+    <select id="findSupRes" parameterType="java.lang.String" resultMap="BaseResultMap_dto">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."PATH",
+               r."DEPTH",
+               r."URL",
+               r."SEQ",
+               r."TYPE",
+               r."WEB_PATH"
+        FROM sys_resource r
+        WHERE r."DEPTH" = 1
+        ORDER BY "SEQ";
+    </select>
+
+    <select id="findMenuBySupId" parameterType="java.lang.String" resultMap="BaseResultMap_sysMenu">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."DEPTH",
+               r."URL"
+        FROM sys_resource r
+        WHERE r."SUP_ID" = #{supId,jdbcType=VARCHAR}
+        ORDER BY "SEQ";
+    </select>
+
+    <select id="findSupMenu" parameterType="java.lang.String" resultMap="BaseResultMap_sysMenu">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."DEPTH",
+               r."URL"
+        FROM sys_resource r
+        WHERE r."DEPTH" = 1
+        ORDER BY "SEQ";
+    </select>
+
+    <select id="findResourceByUserId" resultMap="BaseResultMap">
+        SELECT r.*
+        FROM sys_resource r
+        WHERE r."ID" IN (
+            SELECT RR."RES_ID"
+            FROM sys_role_res RR
+            WHERE RR."ROLE_ID" IN (SELECT UR."ROLE_ID" FROM sys_user_role UR WHERE UR."USER_ID" = #{userId,jdbcType=VARCHAR})
+        )
+    </select>
+
+    <select id="findRightMenuByUserId" resultMap="BaseResultMap_sysMenu">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."DEPTH",
+               r."URL"
+        FROM sys_resource r
+        WHERE r."DEPTH" = 1
+          and r."ID" IN (
+            SELECT RR."RES_ID"
+            FROM sys_role_res RR
+            WHERE RR."ROLE_ID" IN (SELECT UR."ROLE_ID" FROM sys_user_role UR WHERE UR."USER_ID" = #{userId,jdbcType=VARCHAR})
+              AND RR."RIGHT_ID" IN (200, 400)
+        )
+    </select>
+
+    <select id="findRightMenuByUserIdAndSupId" resultMap="BaseResultMap_sysMenu">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."DEPTH",
+               r."URL"
+        FROM sys_resource r
+        WHERE r."SUP_ID" = #{supId,jdbcType=VARCHAR}
+          and r."ID" IN (
+            SELECT RR."RES_ID"
+            FROM sys_role_res RR
+            WHERE RR."ROLE_ID" IN (SELECT UR."ROLE_ID" FROM sys_user_role UR WHERE UR."USER_ID" = #{userId,jdbcType=VARCHAR})
+              AND RR."RIGHT_ID" IN (200, 400)
+        )
+    </select>
+
+    <select id="findMenus" resultMap="BaseResultMap_sysMenu">
+        SELECT r."ID",
+               r."NAME",
+               r."CODE",
+               r."SUP_ID",
+               r."DEPTH",
+               r."URL"
+        FROM sys_resource r
+        ORDER BY "SEQ";
+    </select>
+
+</mapper>

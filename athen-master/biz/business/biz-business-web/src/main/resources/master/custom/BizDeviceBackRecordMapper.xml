@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceBackRecordMapper">
+    <select id="findBackRecordByRfidAndUserId" parameterType="java.lang.String"  resultMap="BaseResultMap">
+        SELECT
+            b.ID
+        FROM
+            BIZ_DEVICE_BACK_RECORD b
+        WHERE
+            b.RFID = #{rfid,jdbcType=VARCHAR}
+          AND
+            b.BACK_USER =  #{userId,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteBackRecordByRfidAndUserId" parameterType="java.lang.String">
+        DELETE
+        FROM
+            BIZ_DEVICE_BACK_RECORD
+        WHERE
+            RFID = #{rfid,jdbcType=VARCHAR}
+          AND
+            BACK_USER = #{userId,jdbcType=VARCHAR}
+    </delete>
+</mapper>

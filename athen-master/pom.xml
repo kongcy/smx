@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.7.RELEASE</version>
+  <!--  <version>2.0.8.RELEASE</version>-->
+  </parent>
+  <groupId>com.xtxk</groupId>
+  <artifactId>athen</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+
+  <name>athen-master</name>
+  <url>http://maven.apache.org</url>
+  <description>总模块</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <druid.version>1.0.18</druid.version>
+    <mybatis.version>3.4.0</mybatis.version>
+    <mybatis-paginator.version>1.2.15</mybatis-paginator.version>
+    <commons-discovery.version>0.5</commons-discovery.version>
+    <commons-collections.version>3.2.2</commons-collections.version>
+    <commons-collections4.version>4.4</commons-collections4.version>
+    <dom4j.version>1.6.1</dom4j.version>
+    <mybatis-spring.version>1.3.0</mybatis-spring.version>
+    <mybatis-spring-boot-starter>1.1.1</mybatis-spring-boot-starter>
+    <mybatis-redis.version>1.0.0-beta2</mybatis-redis.version>
+    <mybatis-paginator.version>1.2.15</mybatis-paginator.version>
+    <commons-lang3.version>3.4</commons-lang3.version>
+    <commons-fileupload.version>1.3.1</commons-fileupload.version>
+    <guava.version>19.0</guava.version>
+    <!--  <jackson.version>2.8.0</jackson.version> -->
+    <poi-ooxml.version>3.14</poi-ooxml.version>
+    <okhttp.version>2.7.5</okhttp.version>
+    <okhttp3.version>3.4.1</okhttp3.version>
+    <qrgen.version>1.4</qrgen.version>
+    <zxing.version>3.2.1</zxing.version>
+    <im4java.version>1.4.0</im4java.version>
+    <lombok.version>1.16.22</lombok.version>
+    <dubbo.version>2.6.0</dubbo.version>
+    <lombok-maven-plugin.version>1.16.8.0</lombok-maven-plugin.version>
+    <commons-codec.version>1.10</commons-codec.version>
+    <mysql.version>8.0.11</mysql.version>
+    <zkclient.version>0.10</zkclient.version>
+    <spring-boot.dubbo.version>2.0.0</spring-boot.dubbo.version>
+    <cglib.version>3.2.9</cglib.version>
+    <postgresql.version>42.2.5</postgresql.version>
+    <slf4j-api.version>1.7.25</slf4j-api.version>
+    <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
+    <!-- 小鱼会议sdk-->
+    <xylink-cloudsdk.version>2.29.1</xylink-cloudsdk.version>
+    <fastjson.version>1.2.51</fastjson.version>
+    <commons-io.versioin>2.4</commons-io.versioin>
+    <commons-lang3.version>3.7</commons-lang3.version>
+<!--    <swagger.version>2.7.0</swagger.version>-->
+    <swagger.version>2.10.5</swagger.version>
+    <swagger-bootstrap-ui.version>1.8.7</swagger-bootstrap-ui.version>
+    <knife4j.version>2.0.9</knife4j.version>
+    <pagehelper.version>1.2.5</pagehelper.version>
+    <docker.image.prefix>xtxk</docker.image.prefix>
+    <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+    <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
+    <!-- <spring-cloud.version>Finchley.SR4</spring-cloud.version>-->
+    <spring-cloud-starter.version>1.4.7.RELEASE</spring-cloud-starter.version>
+    <spring-cloud-starter-ribbon.version>2.0.4.RELEASE</spring-cloud-starter-ribbon.version>
+    <jna.version>5.5.0</jna.version>
+    <joda.version>2.9.9</joda.version>
+    <easyexcel.version>2.2.6</easyexcel.version>
+    <easypoi.version>4.3.0</easypoi.version>
+    <poiooxml.version>1.4</poiooxml.version>
+    <aspose-words.version>15.8.0</aspose-words.version>
+    <maven-war-version>3.1.0</maven-war-version>
+    <nacos.version>2.0.4.RELEASE</nacos.version>
+    <jwt.version>3.11.0</jwt.version>
+    <jjwt.version>0.9.1</jjwt.version>
+    <javax.servlet-api.version>2.5</javax.servlet-api.version>
+    <spring-cloud-starter-ribbon.version>1.4.7.RELEASE</spring-cloud-starter-ribbon.version>
+    <com.alibaba.cloud.version>2.0.4.RELEASE</com.alibaba.cloud.version>
+    <jaxb.version>2.3.0</jaxb.version>
+    <activation.version>1.1.1</activation.version>
+    <hutool.version>5.7.12</hutool.version>
+  </properties>
+
+
+  <modules>
+    <module>base</module>
+    <module>biz</module>
+  </modules>
+
+</project>

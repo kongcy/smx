@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysUserRoleMapper">
+    <select id="findRoleByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT "ROLE_ID" FROM sys_user_role WHERE "USER_ID" =#{userId}
+    </select>
+
+    <delete id="deleteRoleByUserId" parameterType="java.lang.String">
+        DELETE FROM sys_user_role WHERE "USER_ID"=#{userId}
+    </delete>
+</mapper>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 取消注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- Mysql数据库 -->
+		<!--<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.30.11.20:3308/athen" userId="root"
+			password="Xtxk123456">
+			<property name="useInformationSchema" value="true"/>
+		</jdbcConnection>-->
+
+		<!-- 达梦数据库 -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+						connectionURL="jdbc:mysql://localhost:3306/smx" userId="root"
+						password="123456">
+			<property name="useInformationSchema" value="true"/>
+			<property name="nullCatalogMeansCurrent" value="true"/>
+
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- generate Model -->
+		<javaModelGenerator targetPackage="com.athen.business.api.model"
+			targetProject="/Users/chenying/tools/source">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- generate xml -->
+		<sqlMapGenerator targetPackage="com.athen.business.repository"
+			targetProject="/Users/chenying/tools/source">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- generate Mapper schema="postgres" -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.athen.business.repository" targetProject="/Users/chenying/tools/source">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- mybatis映射文件自动生成配置 tableName:数据库表名，domainObjectName:表格映射到POJO名称 -->
+
+
+		<table tableName="biz_device_store" domainObjectName="BizDeviceStore"
+			   enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true"
+			   enableInsert="true" enableUpdateByPrimaryKey="true"
+			   enableCountByExample="true" enableUpdateByExample="true"
+			   enableDeleteByExample="true" enableSelectByExample="true"
+			   selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>

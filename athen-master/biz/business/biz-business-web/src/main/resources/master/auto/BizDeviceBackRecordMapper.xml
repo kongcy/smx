@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.athen.business.repository.BizDeviceBackRecordMapper">
+  <resultMap id="BaseResultMap" type="com.athen.business.api.model.BizDeviceBackRecord">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DEVICE_CODE" jdbcType="VARCHAR" property="deviceCode" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="BACK_USER" jdbcType="VARCHAR" property="backUser" />
+    <result column="BACK_TIME" jdbcType="TIMESTAMP" property="backTime" />
+    <result column="BACK_COUNT" jdbcType="INTEGER" property="backCount" />
+    <result column="OPERATOR" jdbcType="VARCHAR" property="operator" />
+    <result column="RFID" jdbcType="VARCHAR" property="rfid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, DEVICE_CODE, DEVICE_NAME, BACK_USER, BACK_TIME, BACK_COUNT, OPERATOR, RFID
+  </sql>
+  <select id="selectByExample" parameterType="com.athen.business.api.model.BizDeviceBackRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from BIZ_DEVICE_BACK_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BIZ_DEVICE_BACK_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from BIZ_DEVICE_BACK_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.athen.business.api.model.BizDeviceBackRecordExample">
+    delete from BIZ_DEVICE_BACK_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.athen.business.api.model.BizDeviceBackRecord">
+    insert into BIZ_DEVICE_BACK_RECORD (ID, DEVICE_CODE, DEVICE_NAME, 
+      BACK_USER, BACK_TIME, BACK_COUNT, 
+      OPERATOR, RFID)
+    values (#{id,jdbcType=VARCHAR}, #{deviceCode,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, 
+      #{backUser,jdbcType=VARCHAR}, #{backTime,jdbcType=TIMESTAMP}, #{backCount,jdbcType=INTEGER}, 
+      #{operator,jdbcType=VARCHAR}, #{rfid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.athen.business.api.model.BizDeviceBackRecord">
+    insert into BIZ_DEVICE_BACK_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="deviceCode != null">
+        DEVICE_CODE,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="backUser != null">
+        BACK_USER,
+      </if>
+      <if test="backTime != null">
+        BACK_TIME,
+      </if>
+      <if test="backCount != null">
+        BACK_COUNT,
+      </if>
+      <if test="operator != null">
+        OPERATOR,
+      </if>
+      <if test="rfid != null">
+        RFID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceCode != null">
+        #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="backUser != null">
+        #{backUser,jdbcType=VARCHAR},
+      </if>
+      <if test="backTime != null">
+        #{backTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backCount != null">
+        #{backCount,jdbcType=INTEGER},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="rfid != null">
+        #{rfid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.athen.business.api.model.BizDeviceBackRecordExample" resultType="java.lang.Long">
+    select count(*) from BIZ_DEVICE_BACK_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update BIZ_DEVICE_BACK_RECORD
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceCode != null">
+        DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceName != null">
+        DEVICE_NAME = #{record.deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.backUser != null">
+        BACK_USER = #{record.backUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.backTime != null">
+        BACK_TIME = #{record.backTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.backCount != null">
+        BACK_COUNT = #{record.backCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.operator != null">
+        OPERATOR = #{record.operator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rfid != null">
+        RFID = #{record.rfid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update BIZ_DEVICE_BACK_RECORD
+    set ID = #{record.id,jdbcType=VARCHAR},
+      DEVICE_CODE = #{record.deviceCode,jdbcType=VARCHAR},
+      DEVICE_NAME = #{record.deviceName,jdbcType=VARCHAR},
+      BACK_USER = #{record.backUser,jdbcType=VARCHAR},
+      BACK_TIME = #{record.backTime,jdbcType=TIMESTAMP},
+      BACK_COUNT = #{record.backCount,jdbcType=INTEGER},
+      OPERATOR = #{record.operator,jdbcType=VARCHAR},
+      RFID = #{record.rfid,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.athen.business.api.model.BizDeviceBackRecord">
+    update BIZ_DEVICE_BACK_RECORD
+    <set>
+      <if test="deviceCode != null">
+        DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="backUser != null">
+        BACK_USER = #{backUser,jdbcType=VARCHAR},
+      </if>
+      <if test="backTime != null">
+        BACK_TIME = #{backTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backCount != null">
+        BACK_COUNT = #{backCount,jdbcType=INTEGER},
+      </if>
+      <if test="operator != null">
+        OPERATOR = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="rfid != null">
+        RFID = #{rfid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.athen.business.api.model.BizDeviceBackRecord">
+    update BIZ_DEVICE_BACK_RECORD
+    set DEVICE_CODE = #{deviceCode,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      BACK_USER = #{backUser,jdbcType=VARCHAR},
+      BACK_TIME = #{backTime,jdbcType=TIMESTAMP},
+      BACK_COUNT = #{backCount,jdbcType=INTEGER},
+      OPERATOR = #{operator,jdbcType=VARCHAR},
+      RFID = #{rfid,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

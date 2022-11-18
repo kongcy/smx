@@ -1,0 +1,257 @@
+2022-11-18 08:57:53.581 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 08:57:53.582 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:57:54.346 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 08:57:54.348 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 08:57:54.348 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 08:57:56.347 Eureka-register-service [http-nio-9999-exec-6] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 08:57:56.348 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:57:56.348 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:57:56.348 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 08:57:56.348 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 08:57:56.929 Eureka-register-service [http-nio-9999-exec-3] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 08:57:56.930 Eureka-register-service [http-nio-9999-exec-3] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:57:56.930 Eureka-register-service [http-nio-9999-exec-8] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 08:57:56.930 Eureka-register-service [http-nio-9999-exec-3] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:57:56.930 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:57:56.930 Eureka-register-service [http-nio-9999-exec-3] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 08:57:56.931 Eureka-register-service [http-nio-9999-exec-3] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 08:57:56.931 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:57:56.932 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 08:57:56.932 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 08:57:57.581 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 08:57:57.581 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:01.584 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:58:01.585 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:05.584 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 08:58:05.585 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:09.589 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:58:09.590 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:13.591 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:58:13.591 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:17.596 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 08:58:17.597 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:21.601 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:58:21.601 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:24.349 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 08:58:24.349 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 08:58:24.349 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 08:58:25.605 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:58:25.606 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:26.362 Eureka-register-service [http-nio-9999-exec-7] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 08:58:26.362 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:26.363 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:26.363 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 08:58:26.363 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 08:58:26.944 Eureka-register-service [http-nio-9999-exec-1] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 08:58:26.944 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:26.945 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:26.945 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 08:58:26.945 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 08:58:26.945 Eureka-register-service [http-nio-9999-exec-9] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 08:58:26.946 Eureka-register-service [http-nio-9999-exec-9] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:26.947 Eureka-register-service [http-nio-9999-exec-9] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:26.947 Eureka-register-service [http-nio-9999-exec-9] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 08:58:26.947 Eureka-register-service [http-nio-9999-exec-9] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 08:58:29.607 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:58:29.607 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:33.610 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:58:33.611 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:37.610 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 08:58:37.611 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:41.612 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:58:41.612 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:45.612 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 08:58:45.613 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:49.617 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 08:58:49.618 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:53.618 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:58:53.619 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:58:54.354 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 08:58:54.354 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 08:58:54.354 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 08:58:56.378 Eureka-register-service [http-nio-9999-exec-2] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 08:58:56.379 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:56.379 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:56.379 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 08:58:56.379 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 08:58:56.961 Eureka-register-service [http-nio-9999-exec-8] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 08:58:56.961 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-7] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:58:56.963 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:58:56.964 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 08:58:56.964 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 08:58:57.621 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2022-11-18 08:58:57.621 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:01.623 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2022-11-18 08:59:01.624 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:05.628 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:59:05.628 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:09.633 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:59:09.633 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:13.638 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 08:59:13.639 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:17.642 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:59:17.643 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:21.645 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2022-11-18 08:59:21.645 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:24.357 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 08:59:24.357 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 08:59:24.357 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 08:59:25.653 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 08:59:25.654 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:26.396 Eureka-register-service [http-nio-9999-exec-1] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 08:59:26.396 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:26.397 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:26.398 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 08:59:26.398 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 08:59:26.979 Eureka-register-service [http-nio-9999-exec-6] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 08:59:26.979 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:26.980 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:26.980 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 08:59:26.980 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 08:59:26.982 Eureka-register-service [http-nio-9999-exec-4] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 08:59:26.982 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:26.983 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:26.983 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 08:59:26.983 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 08:59:29.657 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:59:29.657 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:33.660 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:59:33.660 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:37.662 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:59:37.663 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:41.667 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:59:41.667 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:45.669 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 08:59:45.669 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:49.674 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 08:59:49.674 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:53.678 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:59:53.678 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 08:59:54.371 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 08:59:54.371 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 08:59:54.372 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - The number of elements in the delta queue is : 0
+2022-11-18 08:59:54.372 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - New application cache entry {name=ALL_APPS_DELTA, type=Application, format=JSON} with apps hashcode UP_3_
+2022-11-18 08:59:54.372 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 08:59:54.372 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:54.373 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - New application cache entry {name=ALL_APPS, type=Application, format=JSON} with apps hashcode UP_3_
+2022-11-18 08:59:54.467 Eureka-register-service [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 0
+2022-11-18 08:59:56.425 Eureka-register-service [http-nio-9999-exec-5] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 08:59:56.426 Eureka-register-service [http-nio-9999-exec-5] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:56.426 Eureka-register-service [http-nio-9999-exec-5] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:56.426 Eureka-register-service [http-nio-9999-exec-5] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 08:59:56.426 Eureka-register-service [http-nio-9999-exec-5] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 08:59:57.003 Eureka-register-service [http-nio-9999-exec-8] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 08:59:57.004 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:57.004 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:57.005 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 08:59:57.005 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 08:59:57.009 Eureka-register-service [http-nio-9999-exec-10] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 08:59:57.009 Eureka-register-service [http-nio-9999-exec-10] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 08:59:57.010 Eureka-register-service [http-nio-9999-exec-10] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 08:59:57.010 Eureka-register-service [http-nio-9999-exec-10] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 08:59:57.010 Eureka-register-service [http-nio-9999-exec-10] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 08:59:57.682 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 08:59:57.682 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:01.686 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 09:00:01.686 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:05.691 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 09:00:05.692 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:09.693 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 09:00:09.693 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:13.694 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 09:00:13.695 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:17.696 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 09:00:17.698 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:21.699 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2022-11-18 09:00:21.699 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:24.377 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 09:00:24.377 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 09:00:24.377 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 09:00:25.699 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:00:25.699 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:26.439 Eureka-register-service [http-nio-9999-exec-6] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 09:00:26.440 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:26.440 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:26.440 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 09:00:26.440 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 09:00:27.023 Eureka-register-service [http-nio-9999-exec-4] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 09:00:27.023 Eureka-register-service [http-nio-9999-exec-2] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 09:00:27.024 Eureka-register-service [http-nio-9999-exec-4] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 09:00:29.704 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 09:00:29.704 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:33.709 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 09:00:33.710 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:37.710 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:00:37.710 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:41.715 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 09:00:41.715 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:45.719 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2022-11-18 09:00:45.720 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:49.720 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 09:00:49.721 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:53.721 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:00:53.722 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:00:54.380 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 09:00:54.380 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 09:00:54.381 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 09:00:56.453 Eureka-register-service [http-nio-9999-exec-7] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 09:00:56.454 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:56.454 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:56.454 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 09:00:56.455 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 09:00:57.038 Eureka-register-service [http-nio-9999-exec-1] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 09:00:57.038 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:57.038 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:57.038 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 09:00:57.039 Eureka-register-service [http-nio-9999-exec-1] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 09:00:57.041 Eureka-register-service [http-nio-9999-exec-6] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 09:00:57.041 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:00:57.041 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:00:57.041 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 09:00:57.042 Eureka-register-service [http-nio-9999-exec-6] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200
+2022-11-18 09:00:57.724 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2022-11-18 09:00:57.725 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:01.725 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:01:01.726 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:05.725 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:01:05.725 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:09.727 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2022-11-18 09:01:09.727 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:13.732 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2022-11-18 09:01:13.732 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:17.733 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:01:17.734 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:21.733 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:01:21.734 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:24.382 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2022-11-18 09:01:24.383 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2022-11-18 09:01:24.383 Eureka-register-service [Eureka-CacheFillTimer] DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2022-11-18 09:01:25.734 Eureka-register-service [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2022-11-18 09:01:25.734 Eureka-register-service [Eureka-EvictionTimer] DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2022-11-18 09:01:26.465 Eureka-register-service [http-nio-9999-exec-2] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-WEB serverId 172.20.10.7:biz-system-web:7071, isReplication {}false
+2022-11-18 09:01:26.465 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:01:26.465 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:01:26.465 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-web:7071
+2022-11-18 09:01:26.465 Eureka-register-service [http-nio-9999-exec-2] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-WEB - 172.20.10.7:biz-system-web:7071; reply status=200
+2022-11-18 09:01:27.054 Eureka-register-service [http-nio-9999-exec-8] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-BUSINESS-WEB serverId 172.20.10.7:biz-business-web:7080, isReplication {}false
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-7] DEBUG o.s.c.n.e.server.InstanceRegistry - renew BIZ-SYSTEM-SERVICE serverId 172.20.10.7:biz-system-service:7070, isReplication {}false
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-business-web:7080
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance 172.20.10.7:biz-system-service:7070
+2022-11-18 09:01:27.055 Eureka-register-service [http-nio-9999-exec-8] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-BUSINESS-WEB - 172.20.10.7:biz-business-web:7080; reply status=200
+2022-11-18 09:01:27.056 Eureka-register-service [http-nio-9999-exec-7] DEBUG c.n.e.resources.InstanceResource - Found (Renew): BIZ-SYSTEM-SERVICE - 172.20.10.7:biz-system-service:7070; reply status=200

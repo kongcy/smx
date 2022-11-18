@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <contextName>spring-admin-service</contextName>
+    <springProperty scope="context" name="logLevel" source="logging.levels"/>
+    <springProperty scope="context" name="logPath" source="logging.path"/>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%white(%d{yyyy-MM-dd HH:mm:ss.SSS}) %green(%contextName) %cyan([%thread]) %-5level %white([%c]: %line) - %red(%msg%n)</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logPath}logback.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--<root level="DEBUG">--><!-- debug信息实在是太多了，不想看 -->
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+    <logger name="org.springframework.*" level="DEBUG"/>
+
+</configuration>

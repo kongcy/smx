@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysRoleResMapper">
+    <delete id="deleteRoleResByRoleId" parameterType="java.lang.String">
+        DELETE
+        FROM sys_role_res
+        WHERE ROLE_ID = #{roleId}
+    </delete>
+
+    <select id="findRoleResByRoleId" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT RES_ID
+        FROM sys_role_res
+        WHERE ROLE_ID = #{roleId}  AND RIGHT_ID ='200';
+    </select>
+
+    <select id="findResIdByUser" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT RES_ID
+        FROM sys_role_res
+        WHERE ROLE_ID IN (SELECT ROLE_ID FROM sys_user_role WHERE USER_ID = #{userId})
+    </select>
+
+    <select id="findRightByUserIdAndResId" resultMap="BaseResultMap">
+        SELECT RR.RES_ID,RR.RIGHT_ID
+        FROM sys_role_res RR
+        WHERE RR.ROLE_ID IN (SELECT UR.ROLE_ID FROM sys_user_role UR WHERE UR.USER_ID = #{userId,jdbcType=VARCHAR})
+          AND RR.RES_ID = #{resId,jdbcType=VARCHAR}
+    </select>
+
+    <select id="findRightByRoleIdAndResId" resultMap="BaseResultMap">
+        SELECT RR.RES_ID,RR.RIGHT_ID
+        FROM sys_role_res RR
+        WHERE RR.ROLE_ID = #{roleId,jdbcType=VARCHAR}
+          AND RR.RES_ID = #{resId,jdbcType=VARCHAR}
+    </select>
+</mapper>

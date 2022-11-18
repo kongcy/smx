@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xtxk.system.repository.SysOrganizationMapper">
+    <select id="selectByOrgName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+            "ORG_ID"
+        FROM
+            sys_organization o
+        WHERE
+            o."NAME" =  #{name,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByOrgCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+            "ORG_ID"
+        FROM
+            sys_organization o
+        WHERE
+            o."CODE" = #{code,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectSupOrg" resultMap="BaseResultMap">
+        SELECT
+            o."ORG_ID",
+            o."NAME",
+            o."CODE",
+            o."PARENT_ORG_ID",
+            o."SEQ"
+        FROM
+            sys_organization o
+        WHERE
+            o."STATE" = 1
+          AND o."PARENT_ORG_ID" = '';
+    </select>
+
+    <select id="selectChildrenOrgByParentId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+            o."ORG_ID",
+            o."NAME",
+            o."CODE",
+            o."PARENT_ORG_ID",
+            o."SEQ"
+        FROM
+            sys_organization o
+        WHERE
+            o."STATE" = 1
+          AND o."PARENT_ORG_ID" = #{parentOrgId,jdbcType=VARCHAR};
+    </select>
+
+    <select id="findOrgByUserId" resultMap="BaseResultMap">
+        SELECT
+            SO."ORG_ID",
+            SO."NAME"
+        FROM
+            sys_organization SO
+                LEFT JOIN sys_user_org UO ON SO."ORG_ID" = UO."ORG_ID"
+        WHERE
+            UO."USER_ID" = #{userId,jdbcType=VARCHAR};
+    </select>
+
+</mapper>
